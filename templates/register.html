@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Registrer ny bruker</h2>
+<form method="POST">
+    <label for="name">Navn</label>
+    <input type="text" name="name" placeholder="Navn" required><br><br>
+
+    <label for="password">Passord</label>
+    <input type="password" name="password" placeholder="Passord" required><br><br>
+    <button type="submit">Registrer</button>
+</form>
+
+{% endblock %}
