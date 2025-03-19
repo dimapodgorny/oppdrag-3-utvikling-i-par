@@ -1,4 +1,14 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% block title %}Velkommen{% endblock %}
+
 {% block content %}
-<h1>velkommen til hjemmesiden!</h1>
+<div class="container">
+    <h1>Velkommen til vår side!</h1>
+    <div class="btn-container">
+            <a href="/login" class="btn">Logg inn</a>
+            <a href="/register" class="btn">Registrer</a>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
