@@ -6,8 +6,12 @@
 <div class="container">
     <h1>Velkommen til vår side!</h1>
     <div class="btn-container">
+        {% if session.get('user_id') %}
+                <a href="/logout" class="btn">Logg ut</a>
+        {% else %}
             <a href="/login" class="btn">Logg inn</a>
             <a href="/register" class="btn">Registrer</a>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

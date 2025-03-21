@@ -10,7 +10,15 @@
 
 <body>
 
-    <h1 class="nav">Haavard og Dimitri</h1>
+    <header>
+        <a class="h_d" href="/"><h1>Haavard og Dimitri</h1></a>
+        <nav>
+            {% if 'user_id' in session %}
+            <h3>Logget inn som: {{ session['name'] }}</h3>
+            {% else %}
+            {% endif %}
+        </nav>
+    </header>
 
     {% block content %}{% endblock %}
 
