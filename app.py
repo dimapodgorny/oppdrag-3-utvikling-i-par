@@ -61,6 +61,11 @@ def login_user(name, password):
 def home():
     return render_template('index.html')
  
+@app.route('/play')
+def play_page():
+    return render_template('play.html')
+
+ 
 @app.route("/register", methods=["GET", "POST"])
 def register_page():
     if request.method == "GET":
