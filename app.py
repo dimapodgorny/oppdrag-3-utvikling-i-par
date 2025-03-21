@@ -22,10 +22,6 @@ def start_db():
  
 start_db()
  
-@app.route('/')
-def home():
-    return render_template('index.html')
- 
 def register_user(name, password):
     if request.method == 'POST':
         conn = sqlite3.connect("database.db")
@@ -42,6 +38,29 @@ def register_user(name, password):
         except sqlite3.IntegrityError:
             return render_template('register.html', error="Brukernavnet er allerede tatt, prøv et annet!")
  
+    return render_template('register.html')
+ 
+def login_user(name, password):
+    conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
+   
+    sql = 'SELECT id, password FROM users WHERE name = ?'
+    cursor.execute(sql, (name,))
+    user = cursor.fetchone()
+   
+    if user and bcrypt.checkpw(password.encode('utf-8'), user[1]):
+        session['name'] = name
+        session['user_id'] = user[0]
+        conn.close()
+        return redirect('/')
+    else:
+        conn.close()
+        return render_template('login.html', error="Feil brukernavn eller passord!")
+ 
+@app.route('/')
+def home():
+    return render_template('index.html')
+ 
 @app.route("/register", methods=["GET", "POST"])
 def register_page():
     if request.method == "GET":
@@ -50,6 +69,23 @@ def register_page():
         name = request.form["name"]
         password = request.form["password"]
         return register_user(name, password)
+ 
+@app.route("/login", methods=["GET", "POST"])
+def login_page():
+    if request.method == "GET":
+        if session.get("name"):
+            return render_template("login.html")
+        else:
+            return render_template("login.html")
+    else:
+        name = request.form["name"]
+        password = request.form["password"]
+        return login_user(name, password)
+ 
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')
  
 if __name__ == '__main__':
     app.run(debug=True, port=2800, host="0.0.0.0")
