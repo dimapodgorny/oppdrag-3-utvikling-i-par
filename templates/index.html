@@ -4,13 +4,16 @@
 
 {% block content %}
 <div class="container">
-    <h1>Velkommen til vår side!</h1>
+    <h1 class="font">Velkommen til vår side!</h1>
     <div class="btn-container">
         {% if session.get('user_id') %}
                 <a href="/logout" class="btn">Logg ut</a>
                 <a href="/play" class="btn">Spill Hvahoot</a>
-                <a href="/highscore" class="btn">Highscores</a>
-                <a href="/user_highscore" class="btn">Dine Resultater</a>
+                <div>
+                    <a href="/highscore" class="btn">Highscores</a>
+                    <a href="/user_highscore" class="btn">Dine Resultater</a>
+
+                </div>
         {% else %}
             <a href="/login" class="btn">Logg inn</a>
             <a href="/register" class="btn">Registrer</a>
