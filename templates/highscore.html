@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Toppliste{% endblock %}
+
+{% block content %}
+<h2>Toppliste - Highscore</h2>
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Bruker</th>
+                <th>Poeng</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in top_results %}
+            <tr>
+                <td>{{ result[0] }}</td>
+                <td>{{ result[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

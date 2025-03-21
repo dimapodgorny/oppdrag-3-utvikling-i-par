@@ -28,4 +28,12 @@ function quiz() {
 
     const resultText = "Du fikk " + score + " av 5 riktig";
     document.getElementById("result").textContent = resultText;
+
+    fetch('/submit_result', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'score=' + score
+    });
 }
