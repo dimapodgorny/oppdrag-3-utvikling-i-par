@@ -27,6 +27,16 @@ nav a {
     font-weight: bold;
 }
 
+
+.question{
+    background-color: #fb8c00;
+    color: white;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
 .logo {
     width: 15%;
 }
@@ -49,13 +59,13 @@ h1 {
     margin: 10px;
     font-size: 1.2em;
     color: white;
-    background-color: #4CAF50; /* Hovedfarge */
+    background-color: #4CAF50;
     border-radius: 20px;
     text-decoration: none;
 }
 
 .btn:hover {
-    background-color: #45a049; /* Mørkere versjon av hovedfargen */
+    background-color: #45a049;
 }
 
 .btn2 {
@@ -64,13 +74,13 @@ h1 {
     margin: 10px;
     font-size: 1.2em;
     color: white;
-    background-color: #FF9800; /* Sekundærfarge */
+    background-color: #FF9800;
     border-radius: 20px;
     text-decoration: none;
 }
 
 .btn2:hover {
-    background-color: #fb8c00; /* Mørkere versjon av sekundærfargen */
+    background-color: #fb8c00;
 }
 
 .error {
@@ -101,7 +111,7 @@ h1 {
 }
 
 .table th {
-    background-color: #4CAF50; /* Hovedfarge */
+    background-color: #4CAF50;
     font-weight: bold;
     color: white;
 }

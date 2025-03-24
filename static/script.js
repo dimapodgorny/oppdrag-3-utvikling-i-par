@@ -2,10 +2,10 @@ let currentQuestion = 1;
 let score = 0;
 
 function startQuiz() {
-    document.getElementById("startButton").style.display = "none";  // Skjuler start-knappen
-    document.getElementById("quizForm").style.display = "block";  // Viser quiz-skjemaet
-    document.getElementById("question1").style.display = "block";  // Viser første spørsmål
-    document.getElementById("nextButton").style.display = "inline-block";  // Viser "Neste"-knappen
+    document.getElementById("startButton").style.display = "none";
+    document.getElementById("quizForm").style.display = "block";
+    document.getElementById("question1").style.display = "block";
+    document.getElementById("nextButton").style.display = "inline-block";
 }
 
 function nextQuestion() {
@@ -45,7 +45,7 @@ function nextQuestion() {
             body: 'score=' + score
         });
 
-        document.getElementById("nextButton").style.display = "none";  // Skjuler "Neste"-knappen etter siste spørsmål
+        document.getElementById("nextButton").style.display = "none";
     } else {
         currentQuestion++;
         document.getElementById("question" + currentQuestion).style.display = "block";
