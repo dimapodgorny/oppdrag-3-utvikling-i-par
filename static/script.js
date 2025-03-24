@@ -8,26 +8,20 @@ function startQuiz() {
     document.getElementById("nextButton").style.display = "inline-block";
 }
 
-function nextQuestion() {
-    const svar1 = document.querySelector('input[name="svar1"]:checked');
-    const svar2 = document.querySelector('input[name="svar2"]:checked');
-    const svar3 = document.querySelector('input[name="svar3"]:checked');
-    const svar4 = document.querySelector('input[name="svar4"]:checked');
-    const svar5 = document.querySelector('input[name="svar5"]:checked');
-
-    if (currentQuestion === 1 && svar1 && svar1.value === "2") {
+function answerQuestion(answer) {
+    if (currentQuestion === 1 && answer === "2") {
         score++;
     }
-    if (currentQuestion === 2 && svar2 && svar2.value === "8") {
+    if (currentQuestion === 2 && answer === "8") {
         score++;
     }
-    if (currentQuestion === 3 && svar3 && svar3.value === "6") {
+    if (currentQuestion === 3 && answer === "6") {
         score++;
     }
-    if (currentQuestion === 4 && svar4 && svar4.value === "21") {
+    if (currentQuestion === 4 && answer === "21") {
         score++;
     }
-    if (currentQuestion === 5 && svar5 && svar5.value === "4") {
+    if (currentQuestion === 5 && answer === "4") {
         score++;
     }
 

@@ -10,51 +10,48 @@
 <form id="quizForm" style="display:none;" onsubmit="event.preventDefault();">
     <div id="question1" style="display:none;">
         <h1 class="question"><label for="svar1">Hva er 1 + 1?</label><br></h1>
-        <input type="radio" id="svar1_1" name="svar1" value="2">
-        <label for="svar1_1">2</label><br>
-        <input type="radio" id="svar1_2" name="svar1" value="3">
-        <label for="svar1_2">3</label><br>
-        <input type="radio" id="svar1_3" name="svar1" value="11">
-        <label for="svar1_3">11</label><br>
+        <div class="box_layout"> 
+            <h2 onclick="answerQuestion('11')" class="box">11</h2>
+            <h2 onclick="answerQuestion('2')" class="box">2</h2>
+            <h2 onclick="answerQuestion('3')" class="box">3</h2>
+            <h2 onclick="answerQuestion('2,5')" class="box">2,5</h2>
+        </div>
     </div>
     <div id="question2" style="display:none;">
         <h1 class="question"><label for="svar2">Hva er 5 + 3?</label><br></h1>
-        <input type="radio" id="svar2_1" name="svar2" value="53">
-        <label for="svar2_1">53</label><br>
-        <input type="radio" id="svar2_2" name="svar2" value="8">
-        <label for="svar2_2">8</label><br>
-        <input type="radio" id="svar2_3" name="svar2" value="2">
-        <label for="svar2_3">2</label><br>
+        <div class="box_layout">
+            <h2 onclick="answerQuestion('8')" class="box">8</h2>
+            <h2 onclick="answerQuestion('53')" class="box">53</h2>
+            <h2 onclick="answerQuestion('2')" class="box">2</h2>
+            <h2 onclick="answerQuestion('4')" class="box">4</h2>
+        </div>
     </div>
     <div id="question3" style="display:none;">
         <h1 class="question"><label for="svar3">Hva er 10 - 4?</label><br></h1>
-        <input type="radio" id="svar3_1" name="svar3" value="14">
-        <label for="svar3_1">14</label><br>
-        <input type="radio" id="svar3_2" name="svar3" value="6">
-        <label for="svar3_2">6</label><br>
-        <input type="radio" id="svar3_3" name="svar3" value="8">
-        <label for="svar3_3">8</label><br>
+        <div class="box_layout">
+            <h2 onclick="answerQuestion('14')" class="box">14</h2>
+            <h2 onclick="answerQuestion('8')" class="box">8</h2>
+            <h2 onclick="answerQuestion('11')" class="box">11</h2>
+            <h2 onclick="answerQuestion('6')" class="box">6</h2>
+        </div>
     </div>
     <div id="question4" style="display:none;">
         <h1 class="question"><label for="svar4">Hva er 7 x 3?</label><br></h1>
-        <input type="radio" id="svar4_1" name="svar4" value="73">
-        <label for="svar4_1">73</label><br>
-        <input type="radio" id="svar4_2" name="svar4" value="21">
-        <label for="svar4_2">21</label><br>
-        <input type="radio" id="svar4_3" name="svar4" value="10">
-        <label for="svar4_3">10</label><br>
+        <div class="box_layout">
+            <h2 onclick="answerQuestion('20')" class="box">20</h2>
+            <h2 onclick="answerQuestion('10')" class="box">10</h2>
+            <h2 onclick="answerQuestion('21')" class="box">21</h2>
+            <h2 onclick="answerQuestion('4')" class="box">4</h2>
+        </div>
     </div>
     <div id="question5" style="display:none;">
         <h1 class="question"><label for="svar5">Hva er 16 ÷ 4?</label><br></h1>
-        <input type="radio" id="svar5_1" name="svar5" value="20">
-        <label for="svar5_1">20</label><br>
-        <input type="radio" id="svar5_2" name="svar5" value="12">
-        <label for="svar5_2">12</label><br>
-        <input type="radio" id="svar5_3" name="svar5" value="4">
-        <label for="svar5_3">4</label><br>
-    </div>
-    <div id="nextButton" style="display:none;">
-        <button type="button" onclick="nextQuestion()" class="btn">Neste</button>
+        <div class="box_layout">
+            <h2 onclick="answerQuestion('4')" class="box">4</h2>
+            <h2 onclick="answerQuestion('20')" class="box">20</h2>
+            <h2 onclick="answerQuestion('12')" class="box">12</h2>
+            <h2 onclick="answerQuestion('8')" class="box">8</h2>
+        </div>
     </div>
 </form>
 
