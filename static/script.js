@@ -1,39 +1,53 @@
-function quiz() {
-    let score = 0;
+let currentQuestion = 1;
+let score = 0;
 
-    const svar1 = prompt("Hva er 1 + 1?");
-    if (svar1 == "2") {
+function startQuiz() {
+    document.getElementById("startButton").style.display = "none";  // Skjuler start-knappen
+    document.getElementById("quizForm").style.display = "block";  // Viser quiz-skjemaet
+    document.getElementById("question1").style.display = "block";  // Viser første spørsmål
+    document.getElementById("nextButton").style.display = "inline-block";  // Viser "Neste"-knappen
+}
+
+function nextQuestion() {
+    const svar1 = document.querySelector('input[name="svar1"]:checked');
+    const svar2 = document.querySelector('input[name="svar2"]:checked');
+    const svar3 = document.querySelector('input[name="svar3"]:checked');
+    const svar4 = document.querySelector('input[name="svar4"]:checked');
+    const svar5 = document.querySelector('input[name="svar5"]:checked');
+
+    if (currentQuestion === 1 && svar1 && svar1.value === "2") {
+        score++;
+    }
+    if (currentQuestion === 2 && svar2 && svar2.value === "8") {
+        score++;
+    }
+    if (currentQuestion === 3 && svar3 && svar3.value === "6") {
+        score++;
+    }
+    if (currentQuestion === 4 && svar4 && svar4.value === "21") {
+        score++;
+    }
+    if (currentQuestion === 5 && svar5 && svar5.value === "4") {
         score++;
     }
 
-    const svar2 = prompt("Hva er 5 + 3?");
-    if (svar2 == "8") {
-        score++;
+    document.getElementById("question" + currentQuestion).style.display = "none";
+
+    if (currentQuestion === 5) {
+        const resultText = "Du fikk " + score + " av 5 riktig";
+        document.getElementById("result").textContent = resultText;
+
+        fetch('/submit_result', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: 'score=' + score
+        });
+
+        document.getElementById("nextButton").style.display = "none";  // Skjuler "Neste"-knappen etter siste spørsmål
+    } else {
+        currentQuestion++;
+        document.getElementById("question" + currentQuestion).style.display = "block";
     }
-
-    const svar3 = prompt("Hva er 10 - 4?");
-    if (svar3 == "6") {
-        score++;
-    }
-
-    const svar4 = prompt("Hva er 7 x 3?");
-    if (svar4 == "21") {
-        score++;
-    }
-
-    const svar5 = prompt("Hva er 16 ÷ 4?");
-    if (svar5 == "4") {
-        score++;
-    }
-
-    const resultText = "Du fikk " + score + " av 5 riktig";
-    document.getElementById("result").textContent = resultText;
-
-    fetch('/submit_result', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: 'score=' + score
-    });
 }
